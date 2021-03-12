@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
+public class main extends UserMainCode{
+public static void main(String args[]) throws ParseException{
+UserMainCode m= new main();
+Scanner s =new Scanner(System.in);
+System.out.println("enter the date:");
+String string=s.nextLine();
+isLeapYear(string);
+  } }
+class UserMainCode {
+static boolean isLeapYear(String string)throws ParseException{
+    boolean result;
+    SimpleDateFormat sdf = new SimpleDateFormat("DD/MM/YYYY");
+SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy");
+Date date= sdf.parse(string);
+String Year= sdf1.format(date);int year=Integer.parseInt(Year);
+if(year%400==0 || year%4==0){
+result=true;
+System.out.println("TRUE");}
+else{
+result=false;
+System.out.println("FALSE");
+}
+return result;
+}
+}
